@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html>
+    <head>
+   <tittle>Array in javacript</tittle>
+    </head>
+    <body>
+        <p id = "demo"></p>
+    </body>
+    <script>
+        var x = 14;
+        var b  = 18;
+        var c =  a+ b= var c;
+        getdocument.ElementById("demo").innerHTML
+    </script>
+    </hmtl>
