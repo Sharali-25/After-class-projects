@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>Javascript Array sort</h3>
+        <p>Click the button to sort the Array in ascesding order</p>
+        <button onclick="Ascending()"> Ascending Order</button>
+        <button onclick="Descending()">Descending Order</button>
+        <p id ="result"></p>
+        <script>
+            var points=[94,25,10,87,29,7];
+            document.getElementById("result").innerHTML= points;
+            function Ascending(){
+                points.sort(function(a,b){return a-b})
+                document.getElementById("result").innerHTML= points;
+            }
+            function Descending(){
+                points.sort(function(a,b){return b-a})
+                document.getElementById("result").innerHTML= points
+            }
+        </script>
+    </body>
+</html>
