@@ -1,0 +1,8 @@
+<html>
+<tittle>Loops and intro to html</tittle>
+<head>
+    <body>
+        <h2>About loops and methods</h2>
+        <p>Loops repeat blocks of code, while methods are named blocks of code that can be reused. A for loop is ideal when you know the number of iterations, while a while loop is better when the loop continues as long as a condition is true. Methods, or functions, help organize code by giving a name to a set of instructions you can call whenever you need them, promoting reusability. </p>
+    </body>
+</head>
