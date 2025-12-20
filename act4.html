@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even Flow</title>
+</head>
+<body>
+    <h1>Odd or Even Checker</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button id="checkBtn">Check</button>
+    <p id="result"></p>
+
+    <script>
+        const numberInput = document.getElementById('numberInput');
+        const checkBtn = document.getElementById('checkBtn');
+        const resultDisplay = document.getElementById('result');
+
+        function checkOddEven(num) {
+            // Flowchart logic in JS
+            if (isNaN(num)) {
+                return "Please enter a valid number";
+            } else {
+                if (num % 2 === 0) {
+                    return `${num} is Even`; // even path
+                } else {
+                    return `${num} is Odd`; // odd path
+                }
+            }
+        }
+
+        checkBtn.addEventListener('click', () => {
+            const num = parseInt(numberInput.value);
+            const result = checkOddEven(num);
+            resultDisplay.textContent = result;
+        });
+    </script>
+</body>
+</html>
