@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Input Validation</title>
+</head>
+<body>
+    <h1>Username Validation</h1>
+    <input type="text" id="username" placeholder="Enter username">
+    <button id="checkBtn">Check Availability</button>
+    <p id="message"></p>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+        const checkBtn = document.getElementById('checkBtn');
+        const message = document.getElementById('message');
+
+        // Simulate async server validation
+        async function validateUsername(username) {
+            message.textContent = 'Checking...';
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const unavailableUsernames = ['admin', 'test', 'user'];
+                    if (unavailableUsernames.includes(username.toLowerCase())) {
+                        resolve(false); // username not available
+                    } else {
+                        resolve(true); // username available
+                    }
+                }, 1000); // simulate 1 second server delay
+            });
+        }
+
+        // Handle button click
+        checkBtn.addEventListener('click', async () => {
+            const username = usernameInput.value.trim();
+            if (!username) {
+                message.textContent = 'Please enter a username.';
+                return;
+            }
+
+            const isValid = await validateUsername(username);
+            if (isValid) {
+                message.textContent = `✅ "${username}" is available!`;
+            } else {
+                message.textContent = `❌ "${username}" is already taken.`;
+            }
+        });
+    </script>
+</body>
+</html>
